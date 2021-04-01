@@ -91,18 +91,21 @@
 
     function setDate() {
       const now = new Date();
+      
       const seconds = now.getSeconds();
       const secondsDegrees = 90 + ((seconds / 60) * 360);
+
       const minutes = now.getMinutes();
       const minutesDegrees = 90 + ((minutes / 60) * 360);
 
       const hours = now.getHours();
       const hoursDegrees = 90 + ((hours / 12 * 360));
-      refreshTransition(seconds)
+
+      refreshTransition(seconds);
+
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
       minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
       hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-
     }
     setInterval(setDate, 1000)
 
